@@ -4,6 +4,7 @@ from tkinter import ttk
 from tkinter.ttk import Progressbar
 
 from Core import app
+from Utils.utilities import ImageConfigurator
 
 
 class SplashScreen(tk.Tk):
@@ -23,6 +24,7 @@ class SplashScreen(tk.Tk):
         self.PIXEL_COUNT_HEIGHT = self.winfo_screenheight()
         x_coordinate = (self.PIXEL_COUNT_WIDTH / 2) - (self.WIDTH_SPLASH_SCREEN / 2)
         y_coordinate = (self.PIXEL_COUNT_HEIGHT / 2) - (self.HEIGHT_SPLASH_SCREEN / 2)
+
         self.geometry("%dx%d+%d+%d" % (self.WIDTH_SPLASH_SCREEN, self.HEIGHT_SPLASH_SCREEN, x_coordinate, y_coordinate))
 
         self.overrideredirect(True)  # removes the window options
@@ -40,14 +42,20 @@ class SplashScreen(tk.Tk):
 
         title_label = ttk.Label(self, text='MACHINET', foreground=self.PRIMARY_COLOUR, background=self.SECONDARY_COLOUR,
                                 font=(self.FONT_STYLE, self.FONT_SIZE + 40, self.FONT_WEIGHT))
-        title_label.place(x=100, y=200)
+        title_label.place(x=50, y=200)
 
         sub_title_label = ttk.Label(self, text='An Auto ML Assist Tool', foreground=self.PRIMARY_COLOUR,
                                     background=self.SECONDARY_COLOUR,
                                     font=(self.FONT_STYLE, self.FONT_SIZE - 5, self.FONT_WEIGHT))
-        sub_title_label.place(x=100, y=280)
+        sub_title_label.place(x=50, y=280)
 
-        activate_button = tk.Button(self, width=10, height=1, text='Get Started', command=self.bar, border=0,
+        logo = ImageConfigurator('Assets/logo_test.jpg', dimension=(420, 320))
+        logo_label = tk.Label(self, image=logo)
+        logo_label.logo = logo
+        logo_label.place(x=550, y=130)
+
+        activate_button = tk.Button(self, width=10, height=1, borderwidth=5, justify="center", overrelief="raised",
+                                    text='Get Started', command=self.bar, border=1,
                                     foreground=self.SECONDARY_COLOUR,
                                     background=self.PRIMARY_COLOUR)
         activate_button.place(x=450, y=520)
