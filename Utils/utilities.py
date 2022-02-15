@@ -30,7 +30,7 @@ def DpiAwareness(app):
         awareness = ctypes.c_int()
         ctypes.windll.shcore.SetProcessDpiAwareness(2)
     except ImportError:
-        pass
+        raise Exception("Unable to import ctypes")
 
 
 def fromRGB(rgb):
@@ -38,3 +38,16 @@ def fromRGB(rgb):
     """
     r, g, b = rgb
     return f'#{r:02x}{g:02x}{b:02x}'
+
+
+def ImageConfigurator(path: str, dimension: tuple):
+    """Loads and resizes an image"""
+    try:
+        from PIL import ImageTk, Image
+
+        image_path = Image.open(path)
+        image_resized = image_path.resize(size=dimension)
+        image = ImageTk.PhotoImage(image_resized)
+        return image
+    except ImportError:
+        raise Exception("Unable to import PIL")
