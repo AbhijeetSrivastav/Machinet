@@ -54,53 +54,53 @@ class ModelTypeFrame(tk.Frame):
         """This method destroys the Welcome Frame and grid the selected model info frame"""
         welcome_screen.WelcomeFrame.WelcomeDestruct()
         if selected_model == "Regression":
-            regression_info_frame = model_class_info_screen.RegressionInfo(parent=self, width=app.WIDTH * 0.7,
-                                                                           height=app.HEIGHT)
+            regression_info_frame = model_class_info_screen.RegressionInfo(parent=self, width=app.WIDTH_APP_SCREEN * 0.7,
+                                                                           height=app.HEIGHT_APP_SCREEN)
             regression_info_frame.grid(row=0, column=1, sticky='e', rowspan=2)
 
             regression_subclass_model_frame = model_subclass_screen.RegressionModelSubTypeFrame(parent=self,
-                                                                                                width=app.WIDTH * 0.3,
-                                                                                                height=app.HEIGHT)
+                                                                                                width=app.WIDTH_APP_SCREEN * 0.3,
+                                                                                                height=app.HEIGHT_APP_SCREEN)
             regression_subclass_model_frame.grid(row=0, column=0, sticky='w', rowspan=1)
 
         elif selected_model == "Classification":
-            classification_info_frame = model_class_info_screen.ClassificationInfo(parent=self, width=app.WIDTH * 0.7,
-                                                                                   height=app.HEIGHT)
+            classification_info_frame = model_class_info_screen.ClassificationInfo(parent=self, width=app.WIDTH_APP_SCREEN * 0.7,
+                                                                                   height=app.HEIGHT_APP_SCREEN)
             classification_info_frame.grid(row=0, column=1, sticky='e', rowspan=2)
 
         elif selected_model == "Clustering":
-            clustering_info_frame = model_class_info_screen.ClusteringInfo(parent=self, width=app.WIDTH * 0.7,
-                                                                           height=app.HEIGHT)
+            clustering_info_frame = model_class_info_screen.ClusteringInfo(parent=self, width=app.WIDTH_APP_SCREEN * 0.7,
+                                                                           height=app.HEIGHT_APP_SCREEN)
             clustering_info_frame.grid(row=0, column=1, sticky='e', rowspan=2)
 
         elif selected_model == "Association Rule Learning":
             association_rule_learning_info_frame = model_class_info_screen.AssociationRuleLearningInfo(parent=self,
-                                                                                                       width=app.WIDTH * 0.7,
-                                                                                                       height=app.HEIGHT)
+                                                                                                       width=app.WIDTH_APP_SCREEN * 0.7,
+                                                                                                       height=app.HEIGHT_APP_SCREEN)
             association_rule_learning_info_frame.grid(row=0, column=1, sticky='e', rowspan=2)
 
         elif selected_model == "Reinforcment Learning":
             reinforcment_learning_info_frame = model_class_info_screen.ReinforcmentLearningInfo(parent=self,
-                                                                                                width=app.WIDTH * 0.7,
-                                                                                                height=app.HEIGHT)
+                                                                                                width=app.WIDTH_APP_SCREEN * 0.7,
+                                                                                                height=app.HEIGHT_APP_SCREEN)
             reinforcment_learning_info_frame.grid(row=0, column=1, sticky='e', rowspan=2)
 
         elif selected_model == "Artificial Neural Network":
             artificial_neural_network_info_frame = model_class_info_screen.ArtificialNeuralNetworkInfo(parent=self,
-                                                                                                       width=app.WIDTH * 0.7,
-                                                                                                       height=app.HEIGHT)
+                                                                                                       width=app.WIDTH_APP_SCREEN * 0.7,
+                                                                                                       height=app.HEIGHT_APP_SCREEN)
             artificial_neural_network_info_frame.grid(row=0, column=1, sticky='e', rowspan=2)
 
         elif selected_model == "Convolutional Neural Network":
             convolutional_neural_network_info_frame = model_class_info_screen.ConvolutionalNeuralNetworkInfo(
-                parent=self, width=app.WIDTH * 0.7,
-                height=app.HEIGHT)
+                parent=self, width=app.WIDTH_APP_SCREEN * 0.7,
+                height=app.HEIGHT_APP_SCREEN)
             convolutional_neural_network_info_frame.grid(row=0, column=1, sticky='e', rowspan=2)
 
         elif selected_model == "Dimensionality Reduction":
             dimensionality_reduction_info_frame = model_class_info_screen.DimensionalityReduction(parent=self,
-                                                                                                  width=app.WIDTH * 0.7,
-                                                                                                  height=app.HEIGHT)
+                                                                                                  width=app.WIDTH_APP_SCREEN * 0.7,
+                                                                                                  height=app.HEIGHT_APP_SCREEN)
             dimensionality_reduction_info_frame.grid(row=0, column=1, sticky='e', rowspan=2)
 
     def ModelTypeFrameDestroy(self):
