@@ -34,13 +34,13 @@ def DpiAwareness(app):
 
 
 def fromRGB(rgb):
-    """translates an rgb tuple of int to a tkinter friendly color code
+    """translates a rgb tuple of int to a tkinter friendly color code
     """
     r, g, b = rgb
     return f'#{r:02x}{g:02x}{b:02x}'
 
 
-def ImageConfigurator(path: str, dimension: tuple):
+def ImageConfigurator(path: str, dimension: tuple) -> object:
     """Loads and resizes an image"""
     try:
         from PIL import ImageTk, Image
@@ -51,3 +51,16 @@ def ImageConfigurator(path: str, dimension: tuple):
         return image
     except ImportError:
         raise Exception("Unable to import PIL")
+
+
+def WinCenter(screen, screen_width: float, screen_height: float) -> tuple:
+    """Centres the Tkinter Window"""
+    try:
+        import tkinter
+        PIXEL_COUNT_WIDTH = screen.winfo_screenwidth()
+        PIXEL_COUNT_HEIGHT = screen.winfo_screenheight()
+        x_coordinate = (PIXEL_COUNT_WIDTH / 2) - (screen_width / 2)
+        y_coordinate = (PIXEL_COUNT_HEIGHT / 2) - (screen_height / 2)
+        return x_coordinate, y_coordinate
+    except Exception:
+        raise Exception('Unable to import tkinter or parameteers invalid!')
