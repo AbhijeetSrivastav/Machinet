@@ -4,35 +4,35 @@ from tkinter import ttk
 from tkinter.ttk import Progressbar
 
 from Core import app
-from Utils.utilities import ImageConfigurator
+from Utils.utilities import ImageConfigurator, WinCenter
 
 
 class SplashScreen(tk.Tk):
     def __init__(self):
         super(SplashScreen, self).__init__()
 
-        "PROPERTIES"
+        "STYLING"
         self.FONT_WEIGHT = 'bold'
         self.FONT_STYLE = 'Calibri (Body)'
         self.FONT_SIZE = 18
         self.PRIMARY_COLOUR = 'White'
         self.SECONDARY_COLOUR = '#249794'
 
-        self.WIDTH_SPLASH_SCREEN = app.WIDTH
-        self.HEIGHT_SPLASH_SCREEN = app.HEIGHT - 100
-        self.PIXEL_COUNT_WIDTH = self.winfo_screenwidth()
-        self.PIXEL_COUNT_HEIGHT = self.winfo_screenheight()
-        x_coordinate = (self.PIXEL_COUNT_WIDTH / 2) - (self.WIDTH_SPLASH_SCREEN / 2)
-        y_coordinate = (self.PIXEL_COUNT_HEIGHT / 2) - (self.HEIGHT_SPLASH_SCREEN / 2)
-
-        self.geometry("%dx%d+%d+%d" % (self.WIDTH_SPLASH_SCREEN, self.HEIGHT_SPLASH_SCREEN, x_coordinate, y_coordinate))
-
-        self.overrideredirect(True)  # removes the window options
-
         s = ttk.Style()
         s.theme_use('clam')
         s.configure("red.Horizontal.TProgressbar", foreground='red', background='#4f4f4f')
 
+        "SCREEN PROPERTIES"
+        self.WIDTH_SPLASH_SCREEN = app.WIDTH_APP_SCREEN
+        self.HEIGHT_SPLASH_SCREEN = app.HEIGHT_APP_SCREEN - 100
+
+        centrizer = WinCenter(self, self.WIDTH_SPLASH_SCREEN, self.HEIGHT_SPLASH_SCREEN)
+        self.geometry("%dx%d+%d+%d" % (self.WIDTH_SPLASH_SCREEN, self.HEIGHT_SPLASH_SCREEN, centrizer[0], centrizer[1]))
+
+        self.overrideredirect(True)  # removes the window options
+
+
+        "WIDGETS"
         # creator_label = ttk.Label(self, text='PROGRAMMED', foreground=self.PRIMARY_COLOUR, background=self.SECONDARY_COLOUR,
         #                font=(self.FONT_STYLE, self.FONT_SIZE, self.FONT_WEIGHT))
         # creator_label.place(x=50, y=110)
