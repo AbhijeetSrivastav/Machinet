@@ -17,7 +17,7 @@ class LinearRegressionParaInfoScreen(ParameterInfoSchema):
         self.dataset_path = ''
         self.linear_regression_model = None
 
-        self.config(border=5, bg='black', width=app.WIDTH, height=app.HEIGHT)
+        self.config(border=5, bg='black', width=app.WIDTH_APP_SCREEN, height=app.HEIGHT_APP_SCREEN)
 
         selected_dataset_label = tk.Label(self, text='Dataset')
         selected_dataset_label.grid(row=0, column=0, sticky='NSEW', padx=60, pady=20)
