@@ -17,6 +17,9 @@ DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
 
+INTRO = """System for Assisting Building of Machine Learning Model 
+"""
+
 USAGE = """"""
 
 INFO = """"""
@@ -33,10 +36,9 @@ def DpiAwareness(app):
         raise Exception("Unable to import ctypes")
 
 
-def fromRGB(rgb):
+def fromRGB(r,g,b):
     """translates a rgb tuple of int to a tkinter friendly color code
     """
-    r, g, b = rgb
     return f'#{r:02x}{g:02x}{b:02x}'
 
 
@@ -63,4 +65,4 @@ def WinCenter(screen, screen_width: float, screen_height: float) -> tuple:
         y_coordinate = (PIXEL_COUNT_HEIGHT / 2) - (screen_height / 2)
         return x_coordinate, y_coordinate
     except Exception:
-        raise Exception('Unable to import tkinter or parameteers invalid!')
+        raise Exception('Unable to import tkinter or parameters invalid!')

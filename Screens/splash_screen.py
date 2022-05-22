@@ -78,6 +78,6 @@ class SplashScreen(tk.Tk):
             time.sleep(0.03)
             r = r + 1
 
-        # Destroying the splash window and opeing app
+        # Destroying the splash window and opening app
         self.destroy()
         app.APP()
