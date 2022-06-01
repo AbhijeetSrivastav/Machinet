@@ -19,7 +19,7 @@ class WelcomeFrame(tk.Frame):
         self.grid_propagate(0)
 
         global welcome_label
-        welcome_label = ttk.Label(self, text='Welcome to AUTO ML', anchor='center')
+        welcome_label = ttk.Label(self, text='', anchor='center')
         welcome_label.grid(row=0, column=1)
 
         logo = ImageConfigurator('Assets/logo.png', dimension=(100, 100))

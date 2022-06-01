@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 
 from Core import app
+from Screens.parameter_screen import LinearRegressionParaInfoScreen
 import main
 from Screens import welcome_screen, model_class_screen
 from Utils import utilities
@@ -43,7 +44,6 @@ class TaskBarFrame(tk.Frame):
 
         task_bar_frame = TaskBarFrame(parent=self.master, width=app.WIDTH_APP_SCREEN * 0.7)
         task_bar_frame.grid(row=1, column=1, sticky='NSEW', columnspan=2)
-
 
 class License(tk.Frame):
     def __init__(self, parent):

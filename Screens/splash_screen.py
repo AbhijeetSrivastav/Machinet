@@ -49,7 +49,7 @@ class SplashScreen(tk.Tk):
                                     font=(self.FONT_STYLE, self.FONT_SIZE - 5, self.FONT_WEIGHT))
         sub_title_label.place(x=50, y=280)
 
-        logo = ImageConfigurator('Assets/logo_test.jpg', dimension=(420, 320))
+        logo = ImageConfigurator('Assets/banner.jpg', dimension=(420, 320))
         logo_label = tk.Label(self, image=logo)
         logo_label.logo = logo
         logo_label.place(x=550, y=130)

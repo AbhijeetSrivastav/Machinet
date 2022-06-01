@@ -1,4 +1,5 @@
 """Simple Linear Regression Model"""
+from calendar import c
 import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.linear_model import LinearRegression
@@ -30,14 +31,15 @@ class LinearRegressionModel:
     def Predict(self):
         # Predicting the Test Result
         y_pred = regressor.predict(X_test)
+        return y_pred
 
     def VisualizeTrainSet(self, graph_title, xlabel, ylabel, train_point_colour, predicted_curve_colour):
         # Visualizing the Training Set Result
 
         train_plot = plt
-        train_plot.scatter(X_train, Y_train, color=train_point_colour)
+        train_plot.scatter(X_train, Y_train, c=train_point_colour)
         train_plot.plot(X_train, regressor.predict(X_train), color=predicted_curve_colour)
-        train_plot.title('Training Set')
+        train_plot.title('Training Set' + '--' + graph_title)
         train_plot.xlabel(xlabel)
         train_plot.ylabel(ylabel)
         train_plot.show()
@@ -47,13 +49,15 @@ class LinearRegressionModel:
         test_plot = plt
         test_plot.scatter(X_test, Y_test, color=train_point_colour)
         test_plot.plot(X_train, regressor.predict(X_train), color=predicted_curve_colour)
-        test_plot.title('Test Set')
+        test_plot.title('Test Set' + '--' + graph_title)
         test_plot.xlabel(xlabel)
         test_plot.ylabel(ylabel)
         test_plot.show()
 
     def PredictValueFor(self, to_predict_value):
         # Making a single prediction
-        print(regressor.predict([[to_predict_value]]))
-        print(regressor.coef_)
-        print(regressor.intercept_)
+        # print(regressor.predict([[to_predict_value]]))
+        # print(regressor.coef_)
+        # print(regressor.intercept_)
+        predicted_values = [regressor.predict([[to_predict_value]]), regressor.coef_, regressor.intercept_]
+        return predicted_values

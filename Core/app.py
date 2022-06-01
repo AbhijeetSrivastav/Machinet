@@ -1,10 +1,7 @@
 import tkinter as tk
-from tkinter import ttk
-from tkinter.ttk import Style
-from turtle import width
 
 from Screens import welcome_screen, model_class_screen, task_bar_screen
-from Utils.utilities import WinCenter, fromRGB
+from Utils.utilities import ImageConfigurator, WinCenter, fromRGB
 
 WIDTH_APP_SCREEN = 1020
 HEIGHT_APP_SCREEN = 720
@@ -31,6 +28,8 @@ class APP(tk.Tk):
         self.resizable(False, False)
         self.rowconfigure(0, weight=2)
         self.columnconfigure(0, weight=2)
+
+        self.iconbitmap('Assets/icon.ico')
 
 
 
